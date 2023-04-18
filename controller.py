@@ -44,3 +44,44 @@ CREATE TABLE usuario (
 );
 """
 crear_tabla(conexion, sql)
+
+#Ingresar datos - usuario
+while True:
+	try:
+		id_usuario = int(input('Ingrese el ID del usuario: '))
+
+		if id_usuario > 0:
+			break
+		else:
+			print('Debe ingresar un valor entero positivo.')
+	except ValueError:
+		print('Debe ingresar un valor entero')
+
+	print()
+
+
+while True:
+	nombre = input('Ingrese un nombre: ').strip()
+
+	if len(nombre):
+		break
+	else:
+		print('Debe ingresar una cadena con un valor especifico para el nombre.')
+
+		print()
+
+
+while True:
+	clave = input('Ingrese su clave: ').strip()
+
+	if len(clave):
+		break
+	else:
+		print('Debe ingresar una cadena con un valor especifico para la clave.')
+
+		print()
+
+crear_usuario(conexion, (id_usuario, nombre, clave))
+
+if conexion:
+	conexion.close()
