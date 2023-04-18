@@ -10,10 +10,10 @@ def crear_conexion(base_datos):
     except sqlite3.Error as error:
         print('Se ha producido un error al crear la conexion:',error)
 
-def crear_tabla(conexion, definicion):
-	cursor = conexion.cursor()
-	cursor.execute(definicion)
-	conexion.commit()
+#def crear_tabla(conexion, definicion):
+#	cursor = conexion.cursor()
+#	cursor.execute(definicion)
+#	conexion.commit()
 
 def mostrar_tablas(conexion):
 	sql = "SELECT name FROM sqlite_master WHERE type='table';"
@@ -43,7 +43,7 @@ CREATE TABLE usuario (
 	clave TEXT NOT NULL
 );
 """
-crear_tabla(conexion, sql)
+#crear_tabla(conexion, sql)
 
 #Ingresar datos - usuario
 while True:
